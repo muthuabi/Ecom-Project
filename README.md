@@ -1,2 +1,2 @@
 # Ecom-Project
-Simple Ecommerce Project using React
+Simple E-Commerce Project using React
