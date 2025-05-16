@@ -1,0 +1,39 @@
+// import './assets/css-js/StyleFromPortfolio.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import './assets/css-js/styles.css';
+import Header from './components/Header';
+import NewUserForm from './components/RegistrationForm';
+import {BrowserRouter as Router,Routes,Route,Link,useLocation} from 'react-router-dom';
+import MyForm from './components/MyForm';
+import AboutUs from './components/AboutUs';
+import LoginForm from './components/LoginForm';
+import Home from './components/Home';
+import ContactUs from './components/ContactUs';
+import PageNotFound from './404-PageNotFound';
+function App() {
+
+  return (
+    <Router>
+    <div className='container-fluid main-container'>
+    <header>
+      <Header role='user'/>
+    </header>
+    <main >
+    <Routes>
+      <Route exact path='/' element={<Home />} />
+      <Route path='/sign-in' element={<LoginForm/>} />
+      <Route path='/sign-up' element={<NewUserForm/>} /> 
+      <Route path='/about-us' element={<AboutUs/>} />
+      <Route path='/contact-us' element={<ContactUs/>} />
+      <Route path='/admin'>
+      </Route>
+      <Route path='*' element={<PageNotFound/>} />
+    </Routes>
+    </main>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
